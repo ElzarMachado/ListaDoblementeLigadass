@@ -1,19 +1,26 @@
-﻿using ListasSimplesLigadas;
+﻿using ListasDoblementeLigadass;
 
-Listas listas = new Listas();
+Lista listas = new Lista();
+
+Console.WriteLine("Mostrando elementos de la lista");
 listas.AgregarNodo("Cero");
 listas.AgregarNodo("Uno");
 listas.AgregarNodo("Dos");
-listas.AgregarNodo("Ocho");
+listas.AgregarNodo("Tres");
 Console.WriteLine(listas.RecorrerLista());
+Console.WriteLine("---------------------------------------------------------");
 
 Console.WriteLine();
-Console.WriteLine("Buscando Nodo");
+Console.WriteLine("Buscando Nodo Dos");
+Nodo nodoBusqueda = listas.Buscar("Dos");
+Console.WriteLine(nodoBusqueda.Valor);
+Console.WriteLine("--------------------------------------------------------");
+
+Console.WriteLine("Buscando nodo anterior al Dos");
 Nodo nodoDos = listas.Buscar("Dos");
-Console.WriteLine(nodoDos.Valor);
+Console.WriteLine(nodoDos.Ant.Valor);
+Console.WriteLine("--------------------------------------------------------");
 
-Console.WriteLine();
-
-Console.WriteLine("Se borro nodo");
+Console.WriteLine("Borrando Dos");
 listas.BorrarNodo("Dos");
 Console.WriteLine(listas.RecorrerLista());
